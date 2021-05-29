@@ -691,6 +691,9 @@ contract AmazingCoin1 is Context, IERC20, Ownable {
     mapping (address => bool) private _isExcludedFromFee;
 
     mapping (address => bool) private _isExcluded;
+
+    mapping (address => bool) private _isBlacklisted;
+
     address[] private _excluded;
    
     uint256 private constant MAX = ~uint256(0);
@@ -736,7 +739,7 @@ contract AmazingCoin1 is Context, IERC20, Ownable {
         _charityWalletAddress = charityWalletAddress;
         _rOwned[_msgSender()] = _rTotal;
         
-        IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0x10ED43C718714eb63d5aA57B78B54704E256024E);
+        IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0x9Ac64Cc6e4415144C455BD8E4837Fea55603e5c3);
          // Create a uniswap pair for this new token
         uniswapV2Pair = IUniswapV2Factory(_uniswapV2Router.factory())
             .createPair(address(this), _uniswapV2Router.WETH());
@@ -1006,6 +1009,8 @@ contract AmazingCoin1 is Context, IERC20, Ownable {
         require(from != address(0), "ERC20: transfer from the zero address");
         require(to != address(0), "ERC20: transfer to the zero address");
         require(amount > 0, "Transfer amount must be greater than zero");
+        require(isBlacklisted(from) == false, "You are banned");
+        require(isBlacklisted(to) == false, "The recipient is banned");
         if(from != owner() && to != owner())
             require(amount <= _maxTxAmount, "Transfer amount exceeds the maxTxAmount.");
 
@@ -1152,6 +1157,24 @@ contract AmazingCoin1 is Context, IERC20, Ownable {
         emit Transfer(sender, recipient, tTransferAmount);
     }
 
+    //Functions for Blaclist wallets
+    function blockAccounts(address[] calldata addresses) external onlyOwner {
+        for (uint256 i; i < addresses.length; ++i) {
+            _isBlacklisted[addresses[i]] = true;
+        }
+    }
+
+    function isBlacklisted(address wallet) public view returns (bool){
+        if(_isBlacklisted[wallet] == true) return true;
+        else return false;
+    }
+
+    function unBlockAccounts(address[] calldata addresses) external onlyOwner {
+        for (uint256 i; i < addresses.length; ++i) {
+            _isBlacklisted[addresses[i]] = false;
+        }
+    }
+    
     //New Pancakeswap router version?
     //No problem, just change it!
     function setRouterAddress(address newRouter) public onlyOwner() {

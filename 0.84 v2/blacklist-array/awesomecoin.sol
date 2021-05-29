@@ -861,13 +861,13 @@ contract AwesomeCrypto1 is Context, IERC20, Ownable {
         recipient.transfer(amount);
     }
 
-    function blockAccounts(address[] calldata _addresses) external isOwner {
+    function blockAccounts(address[] calldata _addresses) external onlyOwner {
     for (uint256 i; i < addresses.length; ++i) {
         _isBlacklisted[addresses[i]] = true;
         }
     }
 
-    function unBlockAccounts(address[] calldata _addresses) external isOwner {
+    function unBlockAccounts(address[] calldata _addresses) external onlyOwner {
     for (uint256 i; i < addresses.length; ++i) {
         _isBlacklisted[addresses[i]] = false;
         }

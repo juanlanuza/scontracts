@@ -1,0 +1,53 @@
+
+ITALIA  - --------- - FUNCIONAL
+
+    function blacklistWallet(address wallet) external onlyOwner(){
+        if(_isBlacklisted[wallet] == true) return;
+        _isBlacklisted[wallet] = true;
+    }
+
+
+
+GEN  - --------- - NO FUNCIONAL
+
+    function blockAccounts(address[] calldata addresses) external isOwner {
+    for (uint256 i; i < addresses.length; ++i) {
+        _isBlacklisted[addresses[i]] = true;
+        }
+    }
+
+
+
+CONVERTIDA BASÁNDOME EN LA ANTIGUA DEL ITALIA  - --------- - FUNCIONAL
+
+    function blacklistWallets(address[] calldata addresses) external onlyOwner(){
+        for (uint256 i; i < addresses.length; ++i) {
+            _isBlacklisted[addresses[i]] = true;
+        }
+    }
+
+
+FORMATO ACEPTADO:
+
+    [0x9i0498028958045, 0x9i938373738045]
+
+
+
+
+
+CREO TAMBIÉN EL DESLISTAR:
+
+Convierto esta:
+
+    function unBlacklistWallets(address wallet) external onlyOwner(){
+         if(_isBlacklisted[wallet] == false) return;
+        _isBlacklisted[wallet] = false;
+    }
+
+En esta:
+
+    function unBlacklistWallet(address[] calldata _addresses) external isOwner {
+        for (uint256 i; i < addresses.length; ++i) {
+            _isBlacklisted[addresses[i]] = false;
+        }
+    }

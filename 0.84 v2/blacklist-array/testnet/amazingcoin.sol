@@ -71,8 +71,6 @@ interface IERC20 {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-
-
 /**
  * @dev Wrappers over Solidity's arithmetic operations with added overflow
  * checks.
@@ -691,7 +689,6 @@ contract AmazingCoin1 is Context, IERC20, Ownable {
     mapping (address => bool) private _isExcludedFromFee;
 
     mapping (address => bool) private _isExcluded;
-
     mapping (address => bool) private _isBlacklisted;
 
     address[] private _excluded;

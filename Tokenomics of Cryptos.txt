@@ -6,3 +6,14 @@ Yummy
 	Charity 3% (on BNB)
 	Hodlers 3%
 	Liquidity 3%
+
+Saw the game
+###
+
+	To buy:
+		1️⃣Put slippage +2%
+		2️⃣Use only numbers completed by .000.000.000 
+		3️⃣if it doesn’t go through try to buy less, remember the anti whale function
+
+	To sell:
+		1️⃣Put slippage +33% - 49%

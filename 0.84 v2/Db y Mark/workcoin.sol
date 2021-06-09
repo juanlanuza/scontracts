@@ -1,9 +1,7 @@
-/**
- *Submitted for verification at BscScan.com on 2021-05-28
-*/
+// SPDX-License-Identifier: Unlicensed
 
 pragma solidity ^0.8.4;
-// SPDX-License-Identifier: Unlicensed
+
 interface IERC20 { // TO-DO CHANGE NAME WHILE DEPLOYING ON BINANCE
 
     /**  

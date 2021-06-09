@@ -1,0 +1,5 @@
+Contrato Lambo en Waves
+
+	https://github.com/waves-exchange/AnyStakeProtocol/blob/master/contracts/lambo.ride
+
+	https://wavesexplorer.com/address/3P3hCvE9ZfeMnZE6kXzR6YBzxhxM8J6PE7K/script

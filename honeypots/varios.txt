@@ -1,0 +1,15 @@
+HoneyPot Contracts:
+
+1)https://bscscan.com/address/0xb51d70562c967884e9d928b85e42eeed8e1e3f43#contracts
+
+2)https://bscscan.com/address/0x2fa28e22c0b65d75a98437723bb6e0c380e306a4#code
+
+3)https://bscscan.com/address/0xc73c0c006b2907211d2c4a839925c9adec43ce3d#code
+
+4)https://bscscan.com/address/0x911fb336595badc114c03300ad98c9f3f1b6235c#code
+
+5)https://bscscan.com/address/0xdd395f2c2048f3941d7792bde181c5aae078c1f7#code
+
+6)https://bscscan.com/token/0xfb75584218f509c10c5a79b126025dcac227f2b8 ( kind of honeypot slippage was 500)
+
+7)https://bscscan.com/token/0x7f260a994bc942abb2d09167b2f4ad8314f13940 ( presale cant be owned )
